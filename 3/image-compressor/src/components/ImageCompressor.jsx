@@ -1,41 +1,35 @@
 import { useState } from "react";
 import ImageUploader from "./ImageUploader";
 import { compressToTarget } from "../utils/compressImage";
-import { downloadZip } from "../utils/zipImages";
 
 export default function ImageCompressor() {
   const [files, setFiles] = useState([]);
-  const [compressed, setCompressed] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(null);
 
-  async function compressAll(targetKB) {
-    setLoading(true);
-    const results = [];
+  async function handleTest() {
+    if (!files.length) return alert("Select an image first");
 
-    for (const file of files) {
-      const out = await compressToTarget(file, targetKB);
-      results.push(out);
-    }
+    const compressed = await compressToTarget(files[0], 100);
 
-    setCompressed(results);
-    setLoading(false);
+    setResult({
+      url: URL.createObjectURL(compressed),
+      size: (compressed.size / 1024).toFixed(2),
+    });
   }
 
   return (
     <div>
       <ImageUploader onFiles={setFiles} />
+      <button onClick={handleTest}>Compress First Image (100KB)</button>
 
-      {files.length > 0 && (
-        <>
-          <button onClick={() => compressAll(100)}>Compress to 100 KB</button>
-          <button onClick={() => compressAll(250)}>Compress to 250 KB</button>
-        </>
-      )}
-
-      {loading && <p>Compressing images...</p>}
-
-      {compressed.length > 0 && (
-        <button onClick={() => downloadZip(compressed)}>Download ZIP</button>
+      {result && (
+        <p>
+          Result size: {result.size} KB —
+          <a href={result.url} download>
+            {" "}
+            Download
+          </a>
+        </p>
       )}
     </div>
   );
