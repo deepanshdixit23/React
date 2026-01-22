@@ -3,11 +3,12 @@ import {
   ReactCompareSliderImage,
 } from "react-compare-slider";
 
-export default function ImageCompare({ original, compressed }) {
+export default function ImageCompare({ before, after }) {
   return (
     <ReactCompareSlider
-      itemOne={<ReactCompareSliderImage src={original} alt="Original" />}
-      itemTwo={<ReactCompareSliderImage src={compressed} alt="Compressed" />}
+      style={{ width: "100%", maxWidth: 320 }}
+      itemOne={<ReactCompareSliderImage src={before} alt="Before" />}
+      itemTwo={<ReactCompareSliderImage src={after} alt="After" />}
     />
   );
 }
