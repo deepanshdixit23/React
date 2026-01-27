@@ -1,0 +1,137 @@
+<!-- public/index.html - Replace the entire file with this SEO-optimized version -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#3b82f6" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Free PDF Editor Online - Merge, Split, Reorder & Rotate PDF Pages</title>
+  <meta name="title" content="Free PDF Editor Online - Merge, Split, Reorder & Rotate PDF Pages" />
+  <meta name="description" content="Free online PDF editor to merge, split, reorder, rotate and delete PDF pages. No registration required. 100% secure and private. Works offline in your browser." />
+  <meta name="keywords" content="PDF editor, merge PDF, split PDF, reorder PDF pages, rotate PDF, delete PDF pages, free PDF tools, online PDF editor, PDF manipulator" />
+  <meta name="author" content="PDF Page Manager" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com/" />
+  <meta property="og:title" content="Free PDF Editor Online - Merge, Split, Reorder & Rotate PDF Pages" />
+  <meta property="og:description" content="Free online PDF editor to merge, split, reorder, rotate and delete PDF pages. No registration required. 100% secure and private." />
+  <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+  <meta property="og:site_name" content="PDF Page Manager" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://yourwebsite.com/" />
+  <meta property="twitter:title" content="Free PDF Editor Online - Merge, Split, Reorder & Rotate PDF Pages" />
+  <meta property="twitter:description" content="Free online PDF editor to merge, split, reorder, rotate and delete PDF pages. No registration required. 100% secure and private." />
+  <meta property="twitter:image" content="%PUBLIC_URL%/twitter-image.png" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourwebsite.com/" />
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+  
+  <!-- Manifest -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
+  <!-- Structured Data - JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PDF Page Manager",
+    "url": "https://yourwebsite.com/",
+    "description": "Free online PDF editor to merge, split, reorder, rotate and delete PDF pages",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Merge PDF files",
+      "Split PDF pages",
+      "Reorder PDF pages",
+      "Rotate PDF pages",
+      "Delete PDF pages",
+      "No watermark",
+      "100% free",
+      "Offline processing"
+    ],
+    "browserRequirements": "Requires JavaScript. Works with Chrome, Firefox, Safari, Edge.",
+    "permissions": "none"
+  }
+  </script>
+  
+  <!-- Performance: Preconnect to CDNs -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <style>
+    /* Critical CSS for initial load */
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Loading spinner */
+    .loader {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #3b82f6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+      <h1>JavaScript Required</h1>
+      <p>You need to enable JavaScript to use this PDF editor.</p>
+      <p>This application runs entirely in your browser for maximum privacy and security.</p>
+    </div>
+  </noscript>
+  
+  <div id="root">
+    <div class="loader"></div>
+  </div>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => console.log('SW registered'))
+          .catch(err => console.log('SW registration failed'));
+      });
+    }
+  </script>
+</body>
+</html>
